@@ -18,6 +18,7 @@ pipeline {
     environment {
         HOME = "${WORKSPACE}"
         DOCKER_CONFIG = "${WORKSPACE}/.docker"
+        ROX_CENTRAL_ENDPOINT = credentials('ROX_CENTRAL_ENDPOINT')
         /* Used to verify the image signature and attestation */
         COSIGN_PUBLIC_KEY = credentials('COSIGN_PUBLIC_KEY')
         /* URL of the BOMbastic api host (e.g. https://sbom.trustification.dev) */
@@ -38,6 +39,8 @@ pipeline {
         /* NEXUS_IO_CREDS = credentials('NEXUS_IO_CREDS') */
         COSIGN_SECRET_PASSWORD = credentials('COSIGN_SECRET_PASSWORD')
         COSIGN_SECRET_KEY = credentials('COSIGN_SECRET_KEY')
+        ROX_API_TOKEN = credentials('ROX_API_TOKEN')
+        GITOPS_AUTH_PASSWORD = credentials('GITOPS_AUTH_PASSWORD')
     }
     stages {
         stage('init') {
