@@ -30,7 +30,7 @@ export GITOPS_REPO_URL=https://github.com/rhtap-dperaza/ssm-demo30-gitops
 export PARAM_IMAGE=${PARAM_IMAGE-$IMAGE}
 # Recompute this every time, otherwise it will be set BEFORE the file exists
 # and be stuck at latest
-export PARAM_IMAGE_DIGEST=$(cat "$BASE_RESULTS/buildah-rhtap/IMAGE_DIGEST" 2>/dev/null || echo "latest")
+export PARAM_IMAGE_DIGEST=$(cat "$BASE_RESULTS/buildah-tssc/IMAGE_DIGEST" 2>/dev/null || echo "latest")
 
 # From Summary
 export SOURCE_BUILD_RESULT_FILE=${SOURCE_BUILD_RESULT_FILE-""}
